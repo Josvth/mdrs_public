@@ -1,15 +1,15 @@
-jupyter lab clean
-
-# Setup a workspace
+# ipywidgets (from https://github.com/binder-examples/jupyter-extension/blob/master/postBuild)
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
 jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38
 
-jupyter lab workspaces import binder/workspace.json
-
 # Add extensions
 jupyter nbextension install --py mayavi --user
 jupyter nbextension enable --py mayavi --user
+
+# ipyevents (from https://github.com/mwcraig/ipyevents/blob/master/binder/postBuild)
+jupyter nbextension enable --py --sys-prefix ipyevents
+jupyter labextension install @jupyter-widgets/jupyterlab-manager ipyevents@latest
 
 # Install simulator
 #pip install -e mdrs_simulator/.

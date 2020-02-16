@@ -2,6 +2,7 @@ name: mdrs_simulator
 channels:
   - conda-forge
 dependencies:
+  - python=3.7
   - pip
   - jupyter_contrib_nbextensions
   - mayavi=4.7.1
