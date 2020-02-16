@@ -50,9 +50,9 @@ RUN pip install vtk && \
 #RUN pip install RISE && \
     #jupyter nbextension install rise --py --sys-prefix && \
     #jupyter nbextension enable rise --py --sys-prefix && \
-RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
-    jupyter nbextension enable --py --sys-prefix ipyevents && \
-    jupyter nbextension install mayavi --py --sys-prefix && \
+#RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
+#    jupyter nbextension enable --py --sys-prefix ipyevents && \
+RUN jupyter nbextension install mayavi --py --sys-prefix && \
     jupyter nbextension enable mayavi --py --sys-prefix && \
 
     npm cache clean --force
