@@ -110,7 +110,7 @@ class Scenario(object):
             t_sim_step = timer()
             self.tof_current = tof
             self.step(animate)
-            print("t=%2.1f s (%5.3f ms)" % (self.t[i], (timer() - t_sim_step) * 1000))
+            # print("t=%2.1f s (%5.3f ms)" % (self.t[i], (timer() - t_sim_step) * 1000))
 
             if not follow is None:
                 mlab.view(azimuth=np.mod(

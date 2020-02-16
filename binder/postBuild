@@ -12,3 +12,10 @@ jupyter lab clean
 
 # Setup a workspace
 jupyter lab workspaces import binder/workspace.json
+
+# Add extensions
+jupyter nbextension install --py mayavi --user
+jupyter nbextension enable --py mayavi --user
+
+# Install simulator
+pip install -e mdrs_simulator/.

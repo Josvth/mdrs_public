@@ -5,8 +5,8 @@ setup(
     version='',
     url='',
     license='',
-    author='Jos',
-    author_email='',
+    author='Jos van t Hof',
+    author_email='josvth@gmail.com',
     description='',
     packages=find_packages(),
     install_requires=['numpy',
@@ -17,5 +17,5 @@ setup(
                       'PyQt5',
                       'numba'],
     entry_points={
-        'main': ["mmWaveISL=mmWaveISL.main:main"]}
+        'main': ["mdrs_simulator=mmWaveISL.main:main"]}
 )
