@@ -50,8 +50,11 @@ RUN pip install vtk && \
 #RUN pip install RISE && \
     #jupyter nbextension install rise --py --sys-prefix && \
     #jupyter nbextension enable rise --py --sys-prefix && \
-RUN jupyter nbextension install mayavi --py --sys-prefix && \
+RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
+    jupyter nbextension enable --py --sys-prefix ipyevents && \
+    jupyter nbextension install mayavi --py --sys-prefix && \
     jupyter nbextension enable mayavi --py --sys-prefix && \
+
     npm cache clean --force
 
 # Clone the repository. First fetch the hash of the latest commit, which will
@@ -69,6 +72,12 @@ RUN jupyter nbextension install mayavi --py --sys-prefix && \
 
 ## Configure the MNE raw browser window to use the full width of the notebook
 #RUN ipython -c "import mne; mne.set_config('MNE_BROWSE_RAW_SIZE', '9.8, 7')"
+
+# Make sure the contents of our repo are in ${HOME}
+COPY . ${HOME}
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
 
 # Add an x-server to the entrypoint. This is needed by Mayavi
 ENTRYPOINT ["tini", "-g", "--", "xvfb-run"]
