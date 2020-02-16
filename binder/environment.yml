@@ -12,4 +12,4 @@ dependencies:
   - jupyterlab=1.2.6
   - numba==0.48.0
   - scipy==1.4.1
-  - pyqt5==5.14.1
+  - pyqt5
