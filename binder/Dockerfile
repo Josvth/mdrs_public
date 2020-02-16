@@ -38,7 +38,10 @@ RUN pip install vtk && \
     pip install xvfbwrapper && \
     pip install mayavi && \
     pip install ipywidgets && \
-    pip install ipyevents
+    pip install ipyevents && \
+    pip install astropy && \
+    pip install poliastro && \
+    pip install numba
     #pip install ipyevents && \
     #pip install pillow && \
     #pip install scikit-learn && \
@@ -50,11 +53,10 @@ RUN pip install vtk && \
 #RUN pip install RISE && \
     #jupyter nbextension install rise --py --sys-prefix && \
     #jupyter nbextension enable rise --py --sys-prefix && \
-#RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
-#    jupyter nbextension enable --py --sys-prefix ipyevents && \
-RUN jupyter nbextension install mayavi --py --sys-prefix && \
+RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension && \
+    jupyter nbextension enable --py --sys-prefix ipyevents && \
+    jupyter nbextension install mayavi --py --sys-prefix && \
     jupyter nbextension enable mayavi --py --sys-prefix && \
-
     npm cache clean --force
 
 # Clone the repository. First fetch the hash of the latest commit, which will
