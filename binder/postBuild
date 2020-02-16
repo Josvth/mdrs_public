@@ -1,11 +1,11 @@
 # ipywidgets (from https://github.com/binder-examples/jupyter-extension/blob/master/postBuild)
 jupyter contrib nbextension install --user
 jupyter nbextension enable --py widgetsnbextension
-jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.38
+jupyter labextension install --dev-build=True @jupyter-widgets/jupyterlab-manager@0.38
 
 # ipyevents (from https://github.com/mwcraig/ipyevents/blob/master/binder/postBuild)
 jupyter nbextension enable --py --sys-prefix ipyevents
-jupyter labextension install @jupyter-widgets/jupyterlab-manager ipyevents@latest
+jupyter labextension install -dev-build=True @jupyter-widgets/jupyterlab-manager ipyevents@latest
 
 # Add extensions
 #jupyter nbextension install --py mayavi --user
