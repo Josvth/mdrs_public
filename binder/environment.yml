@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - pip
+  - jupyter_contrib_nbextensions
   - mayavi=4.7.1
   - astropy==4.0
   - poliastro
