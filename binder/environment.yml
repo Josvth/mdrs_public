@@ -2,6 +2,7 @@ name: mdrs_simulator
 channels:
   - conda-forge
 dependencies:
+  - pip
   - mayavi=4.7.1
   - astropy==4.0
   - poliastro
